@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chatty.MessagePage"
+             >
+    <ContentPage.Content>
+        <ScrollView>
+            <ListView x:Name="MyListView"
+                      IsEnabled="False"
+                      ItemsSource="{Binding Messages}"
+                      CachingStrategy="RecycleElement">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5,0,5,0" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+                                <Label Text="{Binding Reciver}" VerticalTextAlignment="Center" FontSize="12" FontAttributes="Bold"/>
+                                <Label Text="{Binding Text}" VerticalTextAlignment="Center" FontSize="8" />
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
